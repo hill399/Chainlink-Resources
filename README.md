@@ -4,6 +4,12 @@ Collective repo for chainlink related projects.
 ### Node-Heartbeat
 Deployable contract and off-chain cron script to facilitate automated runs of chainlink node jobs. 
 
+Contract/Script currently automating jobs for mainnet node ['Everyday Data'](https://market.link/nodes/11406185-72d3-4cd5-9964-be0c86dc87e2) - deployed at: 
+```
+0x8Ba5844A429C497Ff0032921f14886F52E20D566
+```
+
+
 #### Solidity Contract
 Contract is modified from the chainlink provided TestnetConsumer.sol with the following modifications:
   1. LINK constant has been modified from (10^18) to (10^17) to allow for 0.1 LINK job payments. NOTE: Node environment parameter MINIMUM_CONTRACT_PAYMENT should also be changed to allow lower payments.
