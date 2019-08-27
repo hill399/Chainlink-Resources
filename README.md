@@ -19,3 +19,10 @@ Contract is modified from the chainlink provided TestnetConsumer.sol with the fo
  4. Configure cron script with user details.
  5. Setup python script with cron to automate with preferred timings.
  
+
+### External-Adapters
+Collection of external adapters to integrate into a chainlink node. See individual README for install instructions.
+
+ 1. Mavenstamp API Interface
+ 2. Revolut Business DEMO Interface
+ 3. Telegram Chat Interface
