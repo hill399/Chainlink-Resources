@@ -4,11 +4,30 @@
 # Tested on Python 3.6.
 
 from web3 import Web3
+import json
+import requests
+
+# EthGasStation API
+
+gasStationURL = 'https://ethgasstation.info/json/ethgasAPI.json'
+gasPriceDefault = 12
+
+def return_gas_api(gas_url):
+    response = requests.get(gas_url)
+
+    try:
+        response.raise_for_status()
+    except requests.exceptions.HTTPError as e:
+        print("GAS API Error: " + str(e))
+        return gasPriceDefault
+
+    response = response.json()
+    return response['average'] / 10
 
 # Ethereum Configuration
 
 gasLimit = 300000
-gasPriceGwei = 2
+gasPriceGwei = return_gas_api(gasStationURL)
 
 web3_provider = Web3.HTTPProvider('INFURA/WEB3 NODE PROVIDER HERE')
 w3 = Web3(web3_provider)
